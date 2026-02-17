@@ -10,7 +10,7 @@ const LoginPage = () => {
     event.preventDefault();
 
     try {
-      const response = await api.post("/api/identity/login", {
+      const response = await api.post("/identity/login", {
         email,
         password,
       });

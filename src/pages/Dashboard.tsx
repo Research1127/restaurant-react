@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import api from "../api/axios";
 import type { Restaurant } from "../types/restaurant";
 import type { PaginatedResponse } from "../types/PaginatedResponse";
@@ -9,7 +8,7 @@ const Dashboard: React.FC = () => {
     useState<PaginatedResponse<Restaurant> | null>(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize] = useState(10);
 
   useEffect(() => {
     const getRestaurants = async () => {

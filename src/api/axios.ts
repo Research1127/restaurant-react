@@ -1,8 +1,13 @@
 import axios from "axios";
 
 // Create Axios instance
+// Read API base URL from environment
+const apiBaseURL = import.meta.env.VITE_API_URL;
+
 const api = axios.create({
-  baseURL: "http://localhost:5204/api", // Backend base URL
+  baseURL: `${apiBaseURL}/api`, // Backend base URL for Docker
+
+  // baseURL: "http://localhost:5204",  // For local testing outside Docker
 });
 
 // Automatically attach token to every request
